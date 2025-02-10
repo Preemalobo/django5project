@@ -13,5 +13,5 @@ class Product(models.Model):
     price=models.DecimalField(max_digits=10,decimal_places=2)
 
 
-def __str__(self):
+def __str__(self): # sending the object it will automatic send the name
     return self.name

@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from telnetlib import AUTHENTICATION
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8w%&cgae%2y9#oz=@!k^rioj*nu$iwe_x9n!e=hb4_2ddr#eeh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 
 # Application definition
@@ -34,13 +41,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes', # theses are standard library
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'myapp', # these are own app/custmised app
     'rest_framework',
-    'rest_framework_simplejwt',
+    'rest_framework_simplejwt', # these are third party libray
+    
 ]
 
 MIDDLEWARE = [
@@ -82,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'productsdb',
         'USER': 'postgres',
-        'PASSWORD': '1234',
+        'PASSWORD': 'mili',
         'HOST': 'localhost',
         'PORT': '5432',
     }
