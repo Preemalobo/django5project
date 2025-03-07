@@ -32,4 +32,7 @@ media/
 # Ignore migrations (optional, if you regenerate them often)
 myapp/migrations/__pycache__/
 myapp/migrations/*.pyc
+.dockerignore/
+Dockerfile/
+docker-compose.yml
 
