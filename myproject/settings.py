@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '.wsgi.application'
+WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
 # Database
@@ -100,6 +100,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
 
 AUTH_USER_MODEL='users.CustomUser'
 
